@@ -104,6 +104,5 @@ return array (
     'Magento_Weee' => 1,
     'Magento_CatalogWidget' => 1,
     'Magento_Wishlist' => 1,
-    'Ml_Helloworld' => 1,
   ),
 );
