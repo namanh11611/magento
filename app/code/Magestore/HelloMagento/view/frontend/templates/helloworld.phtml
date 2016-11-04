@@ -1,7 +1,41 @@
-<html>
-<body>
-    <h1> This is text </h1>
-</body>
-</html>
-<!--?php
-echo $block->sayHello();-->
+<h1> This is templates helloworld.phtml </h1>
+<h2> It includes a table show the product </h2>
+
+<style>
+    table, th, td {
+        border: 1px solid black;
+        border-collapse: collapse;
+    }
+    th, td {
+        padding: 5px;
+        text-align: left;
+    }
+</style>
+
+<table>
+    <tr>
+        <th>STT</th>
+        <th>Product Name</th>
+        <th>Product SKU</th>
+        <th>Price</th>
+        <th>Action</th>
+    </tr>
+
+    <?php
+    $collection = $block->getProductCollection();
+    foreach($collection as $product):?>
+        <tr>
+            <td> <?=$product->getId(); ?> </td>
+            <td> <?=$product->getName(); ?> </td>
+            <td> <?=$product->getSKU(); ?> </td>
+            <td>
+                <!-- Hàm format price về chuẩn -->
+                <?php
+                echo $this->helper('Magento\Framework\Pricing\Helper\Data')->currency($product->getPrice(),true,false);
+                ?>
+            </td>
+
+            <td> <p><a href= <?php echo $product->getProductUrl(); ?> > View Detail </a></p> </td>
+        </tr>
+    <?php endforeach;?>
+</table>

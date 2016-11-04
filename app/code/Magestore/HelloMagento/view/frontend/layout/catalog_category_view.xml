@@ -1,0 +1,10 @@
+<!--<?xml version="1.0"?>-->
+<!--<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">-->
+    <!--<body>-->
+        <!--<referenceContainer name="content">-->
+            <!--<block class="Magento\Catalog\Block\Category\View" name="category.products" template="Magento_Catalog::category/products.phtml">-->
+                <!--<block class="Magestore\HelloMagento\Block\ProductList" name="productlist" template="Magento_Catalog::product/list.phtml"/>-->
+            <!--</block>-->
+        <!--</referenceContainer>-->
+    <!--</body>-->
+<!--</page>-->
