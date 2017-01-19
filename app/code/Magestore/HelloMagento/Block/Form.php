@@ -5,15 +5,15 @@ class Form extends \Magento\Framework\View\Element\Template
 {
 
     protected $collectionFactory;
-    protected $_productloader;
+    protected $_productFactory;
 
     public function __construct(
         \Magento\Framework\View\Element\Template\Context $context,
         \Magento\Catalog\Model\ResourceModel\Product\CollectionFactory $collectionFactory,
-        \Magento\Catalog\Model\ProductFactory $_productloader)
+        \Magento\Catalog\Model\ProductFactory $_productFactory)
     {
         $this->collectionFactory = $collectionFactory;
-        $this->_productloader = $_productloader;
+        $this->_productFactory = $_productFactory;
         return parent::__construct($context);
     }
 
@@ -26,12 +26,14 @@ class Form extends \Magento\Framework\View\Element\Template
     }
 
     // Load sản phẩm bằng id để thay đổi giá của nó
-    public function getLoadProduct($id)
-    {
-        return $this->_productloader->create()->load($id);
-    }
+//    public function getLoadProduct($id)
+//    {
+//        var_dump("I am Here");
+//        die;
+//        return $this->_productFactory->create()->load($id);
+//    }
 
-    // Khi gọi Block này, chúng ta sẽ gọi đến action addproduct
+    // Khi gọi click vào button sẽ gọi hàm này, sau đó chúng ta sẽ chuyển đến action addproduct
     public function getActionOfForm()
     {
         return $this->getUrl('hellomagento/addproduct/addproduct');

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<listing xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
+    <columns name="sales_order_columns">
+        <column name="export_status" class="Magestore\HelloMagento\Ui\Component\Listing\Column\OrderStatus">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="visible" xsi:type="boolean">true</item>
+                    <item name="label" xsi:type="string" translate="true">XXX Demo</item>
+                </item>
+            </argument>
+        </column>
+    </columns>
+
+    <container name="edit_product_list_demo">
+        <fieldset name="edit_product_list_demo">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="label" xsi:type="string" translate="true">Edit Product</item>
+                    <item name="collapsible" xsi:type="boolean">true</item>
+                    <item name="sortOrder" xsi:type="number">1</item>
+                    <item name="ns" xsi:type="string">edit_product_list_demo</item>
+                </item>
+            </argument>
+            <insertListing name="hellomagento_product_listing">
+                <argument name="data" xsi:type="array">
+                    <item name="config" xsi:type="array">
+                        <item name="autoRender" xsi:type="string">true</item>
+                        <item name="ns" xsi:type="string">hellomagento_product_listing</item>
+                        <item name="externalProvider" xsi:type="string">hellomagento_product_listing.hellomagento_product_listing_data_source</item>
+                    </item>
+                </argument>
+            </insertListing>
+        </fieldset>
+    </container>
+</listing>
